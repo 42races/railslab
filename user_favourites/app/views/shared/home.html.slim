@@ -8,5 +8,5 @@ p
     | My Products
     = "(#{current_user.favourites.size})"
   ul
-    - current_user.favourites.each do |fav|
-      li= link_to fav.product.name, product_path(fav.product)
+    - current_user.favourited_products.each do |prod|
+      li= link_to prod.name, product_path(prod)

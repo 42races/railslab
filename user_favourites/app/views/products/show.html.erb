@@ -17,6 +17,6 @@
 
 <h2> Favourited by</h2>
 
-<% @product.favourors.each do |fav| %>
-  <li><%= fav.user.email %></li>
+<% @product.fans.each do |fan| %>
+  <li><%= fan.email %></li>
 <% end %>

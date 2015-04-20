@@ -5,5 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :favourites, class_name: 'UserFavourite'
-  has_many :products, through: :user_favourites
+  has_many :favourited_products, through: :favourites, source: :product
 end

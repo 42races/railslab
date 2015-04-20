@@ -1,0 +1,12 @@
+h1 Hi I am Adam
+
+p
+  = link_to 'Products', products_path
+
+- if user_signed_in?
+  h2
+    | My Products
+    = "(#{current_user.favourites.size})"
+  ul
+    - current_user.favourites.each do |fav|
+      li= link_to fav.product.name, product_path(fav.product)

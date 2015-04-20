@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+<%= link_to "Favourite #{@product.favourors.size}", favourite_path(product_id: @product), method: :post %> |
+<%= link_to "Unfavourite #{@product.favourors.size}", unfavourite_path(product_id: @product), method: :delete %> |
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
+
+<h2> Favourited by</h2>
+
+<% @product.favourors.each do |fav| %>
+  <li><%= fav.user.email %></li>
+<% end %>
